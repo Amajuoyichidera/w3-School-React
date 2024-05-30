@@ -1,4 +1,10 @@
 import getMessage from './message.js'
+import Car from './Car.js';
+
+
+function Code (params) {
+  return <p>I Love Coding</p>
+}
 
 function App() {
   const myArray = [ 'apple', 'paw-paw', 'orange', 'banana', 'cucumber'];
@@ -38,13 +44,25 @@ function App() {
     }
 
     const allAboutMe = {...aboutMe, ...aboutMe2}
+
+     let myColor = 'blue';
+
+     const carInfo = {
+      model: 'Mustang'
+     }
+
+     const shoot = (a) => {
+      alert(a)
+     }
+
   return (
     <div className="App">
       {myArray.map((item) => 
-        <p>{item}</p>
+        <p style={{ color: myColor == 'black' ? 'black' : 'brown'}}>{item}</p>
        )}
        <p>{getMessage()}</p>
-       <p>{allAboutMe.age}</p>
+       <p>{allAboutMe.name}</p>
+       <p>{allAboutMe.age == 20 ? 30 : 20}</p>
        <p>{one}</p>
        <p>{two}</p>
        <p>{combined}</p>
@@ -54,6 +72,8 @@ function App() {
       <p>{sum}</p>
       <p>{multiply}</p>
       <p>{division}</p>
+      <Code />
+      <Car brand='ford' color='Yellow' brand2 = {carInfo} click={() => shoot('Goal!!!!')} />
     </div>
   );
 }
