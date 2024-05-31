@@ -1,8 +1,7 @@
 import getMessage from './message.js'
 import Car from './Car.js';
 
-
-function Code (params) {
+function Code () {
   return <p>I Love Coding</p>
 }
 
