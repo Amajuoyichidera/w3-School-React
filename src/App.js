@@ -29,7 +29,7 @@ function App() {
     const numberOne = [1, 2, 3];
     const numberTwo = [4, 5, 6];
     const combined = [...numberOne, ...numberTwo];
-    const [one, two, ...others] = combined;
+    const [one, two] = combined;
 
     const aboutMe = {
       name: 'David',
@@ -54,14 +54,20 @@ function App() {
       alert(a)
      }
 
+     const car = [
+      {id: 1, brand: 'Ford'},
+      {id: 2, brand: 'BMW'},
+      {id: 3, brand: 'Audi'}
+    ];
+
   return (
     <div className="App">
       {myArray.map((item) => 
-        <p style={{ color: myColor == 'black' ? 'black' : 'brown'}}>{item}</p>
+        <p style={{ color: myColor === 'black' ? 'black' : 'brown'}}>{item}</p>
        )}
        <p>{getMessage()}</p>
        <p>{allAboutMe.name}</p>
-       <p>{allAboutMe.age == 20 ? 30 : 20}</p>
+       <p>{allAboutMe.age === 20 ? 30 : 20}</p>
        <p>{one}</p>
        <p>{two}</p>
        <p>{combined}</p>
@@ -72,7 +78,7 @@ function App() {
       <p>{multiply}</p>
       <p>{division}</p>
       <Code />
-      <Car brand='ford' color='Yellow' brand2 = {carInfo} click={() => shoot('Goal!!!!')} />
+      <Car cars={car.map((item) => <li key={item.id}>{item.brand}</li>)} car={car} goal={true} brand='ford' color='Yellow' brand2 = {carInfo} click={() => shoot('Goal!!!!')} />
     </div>
   );
 }
