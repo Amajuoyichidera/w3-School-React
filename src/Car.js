@@ -11,10 +11,9 @@ function MadeGoal() {
     <p>Suiiiiiiiiii</p>
     </>
 }
-
 function Car(props) {
     const goal = props.goal;
-    const car = props.car;
+    const car = props.cars;
 
     const [name, setName] = useState();
     function handleSubmit(e) {
@@ -32,7 +31,7 @@ function Car(props) {
         {
           car.length > 0 && <p>You have {car.length} cars in your garage</p>
         }
-        <h2>I am a {props.color} {props.brand} {props.brand2.model} Car</h2>
+        <h2>I am a {props.color} {props.brand}  Car</h2>
         <button onClick={props.click}>Shoot</button>
         {goal ? <MadeGoal /> : <MissedGoal />}
     </div>
